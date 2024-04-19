@@ -1,7 +1,6 @@
 import React from "react";
 // import styles from "./MyComponent.module.css"; // CSS Modules for styling
 
-import "bootstrap/dist/css/bootstrap.min.css";
 interface MyComponentProps {
   // Define your component props here
 }
