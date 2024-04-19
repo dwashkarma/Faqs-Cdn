@@ -9,11 +9,12 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
+    "typescript": "^5.4.5",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "rollup -c ",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -34,5 +35,13 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@rollup/plugin-typescript": "^11.1.6",
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.38",
+    "rollup": "^2.79.1",
+    "rollup-plugin-postcss": "^4.0.2",
+    "tailwind": "^4.0.0"
   }
 }

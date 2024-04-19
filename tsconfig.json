@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "es5", // Adjust target based on your browser support requirements
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "jsx": "react",
+    "skipLibCheck": true, // Optional: Skip library check for external dependencies
+    "esModuleInterop": true, // Optional: Enable ES module interoperability
+    "allowSyntheticDefaultImports": true, // Optional: Allow synthetic default imports
+    "strict": true, // Enable strict type checking
+    "forceConsistentCasingInFileNames": true, // Optional: Enforce consistent filename casing
+    "outDir": "dist", // Output directory for compiled JavaScript files
+    "declaration": true,
+    "declarationDir": "dist/types",
+    "rootDir": "src", // Root directory where TypeScript files reside
+    "module": "esnext" // Adjust module type based on your project setup (e.g., commonjs)
+  },
+  "include": ["src/**/*.ts", "src/**/*.tsx"] // Include TypeScript files for compilation
+}
