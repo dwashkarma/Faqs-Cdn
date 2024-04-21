@@ -37,9 +37,9 @@ function generateAccordionItems(data: AccordionItem[]) {
           ? (accordionItem.innerHTML = `
       <div class="accordion-item">
         <h2 class="accordion-header">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#${index}" aria-expanded="false" aria-controls="${index}">
+          <button class="accordion-button collapsed d-flex flex-wrap" type="button" data-bs-toggle="collapse" data-bs-target="#${index}" aria-expanded="false" aria-controls="${index}">
             <span>${item.title}</span> 
-            <span class="border border-success-subtle rounded-pill ml-5 px-2 py-1 fs-6 ">${item.category}</span>
+            <span class="border border-success-subtle rounded-pill mx-5 px-2 py-1 fs-6 ">${item.category}</span>
           </button>
         </h2>
         <div id="${index}" class="accordion-collapse collapse " data-bs-parent="#accordionExample">
@@ -53,9 +53,9 @@ function generateAccordionItems(data: AccordionItem[]) {
           : (accordionItem.innerHTML = `
       <div class="accordion-item">
         <h2 class="accordion-header">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#${index}" aria-expanded="false" aria-controls="${index}">
+          <button class="accordion-button collapsed d-flex flex-wrap" type="button" data-bs-toggle="collapse" data-bs-target="#${index}" aria-expanded="false" aria-controls="${index}">
             <span>${item.title}</span>
-            <span class="border border-success-subtle rounded-pill ml-5 px-2 py-1 fs-6 ">${item.category}</span>
+            <span class="border border-success-subtle rounded-pill mx-5 px-2 py-1 fs-6 ">${item.category}</span>
           </button>
         </h2>
         <div id="${index}" class="accordion-collapse collapse " data-bs-parent="#accordionExample">
