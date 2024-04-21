@@ -1,6 +1,6 @@
 {
   "name": "accordian-dwas",
-  "version": "0.1.14",
+  "version": "0.1.15",
   "type": "commonjs",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
