@@ -1012,9 +1012,19 @@ function generateAccordionItems(data) {
     var accordion = document.getElementById("faqs");
     if (accordion) {
         data.forEach(function (item, index) {
+            var _a;
             var accordionItem = document.createElement("div");
             accordionItem.classList.add("accordion");
-            accordionItem.innerHTML = "\n      <div class=\"accordion-item\">\n        <h2 class=\"accordion-header\">\n          <button class=\"accordion-button\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#".concat(index, "\" aria-expanded=\"true\" aria-controls=\"").concat(index, "\">\n            <span>").concat(item.title, "</span><span>").concat(item.category, "</span>\n          </button>\n        </h2>\n        <div id=\"").concat(index, "\" class=\"accordion-collapse collapse show\" data-bs-parent=\"#accordionExample\">\n          <div class=\"accordion-body\">\n            <div><strong>").concat(item.content, "</strong></div>\n          </div>\n        </div>\n        </div>\n      ");
+            var steps = "";
+            (_a = item.steps) === null || _a === void 0 ? void 0 : _a.map(function (items, index) {
+                steps += "<div>\n  <span>".concat(items.title, "</span>\n  <span>").concat(items.description, "</span>\n  </div>");
+            });
+            {
+                (item === null || item === void 0 ? void 0 : item.steps)
+                    ? steps
+                    : (accordionItem.innerHTML = "\n      <div class=\"accordion-item\">\n        <h2 class=\"accordion-header\">\n          <button class=\"accordion-button\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#".concat(index, "\" aria-expanded=\"false\" aria-controls=\"").concat(index, "\">\n            <span>").concat(item.title, "</span><span>").concat(item.category, "</span>\n          </button>\n        </h2>\n        <div id=\"").concat(index, "\" class=\"accordion-collapse collapse show\" data-bs-parent=\"#accordionExample\">\n       \n        <div class=\"accordion-body\">\n            <div>").concat(item.content, "</div>\n          </div>\n        </div>\n        </div>\n      "));
+            }
+            accordionItem.innerHTML = "\n      <div class=\"accordion-item\">\n        <h2 class=\"accordion-header\">\n          <button class=\"accordion-button\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#".concat(index, "\" aria-expanded=\"false\" aria-controls=\"").concat(index, "\">\n            <span>").concat(item.title, "</span><span>").concat(item.category, "</span>\n          </button>\n        </h2>\n        <div id=\"").concat(index, "\" class=\"accordion-collapse collapse show\" data-bs-parent=\"#accordionExample\">\n       \n        <div class=\"accordion-body\">\n            <div>").concat(item.content, "</div>\n          </div>\n        </div>\n        </div>\n      ");
             if (accordion) {
                 accordion.appendChild(accordionItem);
             }
