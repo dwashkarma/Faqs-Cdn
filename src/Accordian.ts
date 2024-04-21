@@ -107,7 +107,7 @@ function generateAccordionItems(data: AccordionItem[]) {
           ? (accordionItem.innerHTML = `
       <div class="accordion-item">
         <h2 class="accordion-header">
-          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#${index}" aria-expanded="false" aria-controls="${index}">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#${index}" aria-expanded="false" aria-controls="${index}">
             <span>${item.title}</span><span>${item.category}</span>
           </button>
         </h2>
@@ -122,7 +122,7 @@ function generateAccordionItems(data: AccordionItem[]) {
           : (accordionItem.innerHTML = `
       <div class="accordion-item">
         <h2 class="accordion-header">
-          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#${index}" aria-expanded="false" aria-controls="${index}">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#${index}" aria-expanded="false" aria-controls="${index}">
             <span>${item.title}</span><span>${item.category}</span>
           </button>
         </h2>
