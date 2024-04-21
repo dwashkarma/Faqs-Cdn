@@ -111,7 +111,7 @@ function generateAccordionItems(data: AccordionItem[]) {
             <span>${item.title}</span><span>${item.category}</span>
           </button>
         </h2>
-        <div id="${index}" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+        <div id="${index}" class="accordion-collapse collapse " data-bs-parent="#accordionExample">
        
         <div class="accordion-body">
            ${steps}
@@ -126,7 +126,7 @@ function generateAccordionItems(data: AccordionItem[]) {
             <span>${item.title}</span><span>${item.category}</span>
           </button>
         </h2>
-        <div id="${index}" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+        <div id="${index}" class="accordion-collapse collapse " data-bs-parent="#accordionExample">
        
         <div class="accordion-body">
             <div>${item.content}</div>
