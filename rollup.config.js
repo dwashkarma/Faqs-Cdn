@@ -4,10 +4,10 @@ import autoprefixer from "autoprefixer";
 
 export default [
   {
-    input: "src/Accordian.tsx",
+    input: "src/Accordian.ts",
     output: [
       {
-        file: "dist/index.js",
+        file: "dist/index.umd.js",
         format: "umd",
         sourcemap: true,
         name: "accordian",
@@ -15,10 +15,12 @@ export default [
       {
         file: "dist/index.esm.js",
         format: "esm",
+        sourcemap: true,
       },
       {
         file: "dist/index.js",
         format: "cjs",
+        sourcemap: true,
       },
     ],
     plugins: [
