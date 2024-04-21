@@ -1,90 +1,20 @@
 import { faqsList } from "./raw-data/faqs";
 
 interface Step {
-  title: string; // Enforce string type for title
+  title: string;
   description: string;
-  steps: any; // Assuming steps within a step is not allowed
+  steps: any;
 }
 
 interface AccordionItem {
   title: string;
   content: string;
   category: string;
-  steps?: Step[]; // Array of Step objects
+  steps?: Step[];
 }
 
-// Sample data representing accordion items
-// const accordionData: AccordionItem[] = [
-//   {
-//     id: "collapseOne",
-//     title: "How to open a DEMAT account with Naasa Securities online?",
-//     description:
-//       "This is the first item's accordion body. It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the .accordion-body, though the transition does limit overflow.",
-//   },
-//   {
-//     id: "collapseTwo",
-//     title: "Accordion Item #2",
-//     description:
-//       "This is the second item's accordion body. It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the .accordion-body, though the transition does limit overflow.",
-//   },
-//   {
-//     id: "collapseTwo",
-//     title: "Accordion Item #2",
-//     description:
-//       "This is the second item's accordion body. It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the .accordion-body, though the transition does limit overflow.",
-//   },
-//   {
-//     id: "collapseTwo",
-//     title: "Accordion Item #2",
-//     description:
-//       "This is the second item's accordion body. It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the .accordion-body, though the transition does limit overflow.",
-//   },
-//   {
-//     id: "collapseTwo",
-//     title: "Accordion Item #2",
-//     description:
-//       "This is the second item's accordion body. It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the .accordion-body, though the transition does limit overflow.",
-//   },
-//   {
-//     id: "collapseTwo",
-//     title: "Accordion Item #2",
-//     description:
-//       "This is the second item's accordion body. It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the .accordion-body, though the transition does limit overflow.",
-//   },
-//   {
-//     id: "collapseTwo",
-//     title: "Accordion Item #2",
-//     description:
-//       "This is the second item's accordion body. It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the .accordion-body, though the transition does limit overflow.",
-//   },
-//   {
-//     id: "collapseTwo",
-//     title: "Accordion Item #2",
-//     description:
-//       "This is the second item's accordion body. It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the .accordion-body, though the transition does limit overflow.",
-//   },
-//   {
-//     id: "collapseTwo",
-//     title: "Accordion Item #2",
-//     description:
-//       "This is the second item's accordion body. It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the .accordion-body, though the transition does limit overflow.",
-//   },
-//   {
-//     id: "collapseTwo",
-//     title: "Accordion Item #2",
-//     description:
-//       "This is the second item's accordion body. It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the .accordion-body, though the transition does limit overflow.",
-//   },
-//   {
-//     id: "collapseTwo",
-//     title: "Accordion Item #2",
-//     description:
-//       "This is the second item's accordion body. It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the .accordion-body, though the transition does limit overflow.",
-//   },
-//   // Add more items as needed
-// ];
-
 const accordionData = faqsList;
+
 // Function to generate HTML for accordion items based on data
 function generateAccordionItems(data: AccordionItem[]) {
   const accordion = document.getElementById("faqs");
@@ -108,7 +38,8 @@ function generateAccordionItems(data: AccordionItem[]) {
       <div class="accordion-item">
         <h2 class="accordion-header">
           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#${index}" aria-expanded="false" aria-controls="${index}">
-            <span>${item.title}</span><span>${item.category}</span>
+            <span>${item.title}</span> 
+            <span class="border border-success-subtle rounded-pill ml-5 px-2 py-1 fs-6 ">${item.category}</span>
           </button>
         </h2>
         <div id="${index}" class="accordion-collapse collapse " data-bs-parent="#accordionExample">
@@ -123,7 +54,8 @@ function generateAccordionItems(data: AccordionItem[]) {
       <div class="accordion-item">
         <h2 class="accordion-header">
           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#${index}" aria-expanded="false" aria-controls="${index}">
-            <span>${item.title}</span><span>${item.category}</span>
+            <span>${item.title}</span>
+            <span class="border border-success-subtle rounded-pill ml-5 px-2 py-1 fs-6 ">${item.category}</span>
           </button>
         </h2>
         <div id="${index}" class="accordion-collapse collapse " data-bs-parent="#accordionExample">
