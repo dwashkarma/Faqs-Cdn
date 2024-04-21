@@ -103,7 +103,21 @@ function generateAccordionItems(data: AccordionItem[]) {
 
       {
         item?.steps
-          ? steps
+          ? (accordionItem.innerHTML = `
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#${index}" aria-expanded="false" aria-controls="${index}">
+            <span>${item.title}</span><span>${item.category}</span>
+          </button>
+        </h2>
+        <div id="${index}" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+       
+        <div class="accordion-body">
+           ${steps}
+          </div>
+        </div>
+        </div>
+      `)
           : (accordionItem.innerHTML = `
       <div class="accordion-item">
         <h2 class="accordion-header">
