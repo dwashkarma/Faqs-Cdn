@@ -16,7 +16,7 @@ const accordionData: AccordionItem[] = [
 
 // Function to generate HTML for accordion items based on data
 function generateAccordionItems(data: AccordionItem[]) {
-  const accordion = document.getElementById("accordian");
+  const accordion = document.getElementById("accordion");
 
   if (accordion) {
     data.forEach((item, index) => {
