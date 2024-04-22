@@ -17,36 +17,9 @@ const accordionData = faqsList;
 
 // Function to generate HTML for accordion items based on data
 function generateAccordionItems(data: AccordionItem[]) {
-
-
-const form = document.createElement("form");
-form.classList.add("d-flex");
-form.setAttribute("role", "search");
-
-// Create input element
-const input = document.createElement("input");
-input.classList.add("form-control", "me-2");
-input.setAttribute("type", "search");
-input.setAttribute("placeholder", "Search");
-input.setAttribute("aria-label", "Search");
-
-// Append input to form
-form.appendChild(input);
-
-// Append form to the container
-const container = document.getElementById("searchFormContainer");
-if (container) {
-  container.appendChild(form);
-} else {
-  console.log("There is no id named:Search");
-}
-
   const accordion = document.getElementById("faqs");
 
   if (accordion) {
-    const searchDiv = document.createElement("div");
-    searchDiv.classList.add("search-div");
-
     data.forEach((item, index) => {
       const accordionItem = document.createElement("div");
       accordionItem.classList.add("accordion");
@@ -103,4 +76,42 @@ if (container) {
 }
 
 // Generate accordion items based on data
-generateAccordionItems(accordionData);
+// generateAccordionItems(accordionData);
+
+let filterValue = {
+  search: "",
+  category: "All Categories",
+};
+const handleSearchChange = (event: Event) => {
+  let target = event.target as HTMLInputElement;
+  filterValue = { ...filterValue, search: target.value };
+};
+
+//On DOMContentLoaded
+document.addEventListener("DOMContentLoaded", () => {
+  //create form element
+  const form = document.createElement("form");
+  form.classList.add("d-flex");
+  form.setAttribute("role", "search");
+
+  // Create input element
+  const input = document.createElement("input");
+  input.classList.add("form-control", "me-2");
+  input.setAttribute("type", "search");
+  input.setAttribute("placeholder", "Search");
+  input.setAttribute("aria-label", "Search");
+  input.addEventListener("change", handleSearchChange);
+
+  // Append input to form
+  form.appendChild(input);
+
+  // Append form to the container
+  const container = document.getElementById("searchFormContainer");
+  if (container) {
+    container.appendChild(form);
+  } else {
+    console.log("There is no id named:Search");
+  }
+
+  generateAccordionItems(faqsList);
+});
