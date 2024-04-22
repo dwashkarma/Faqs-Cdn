@@ -4,7 +4,10 @@ import { faqCategories } from "./raw-data/faqs";
 interface Step {
   title: string;
   description: string;
-  steps: any;
+  steps: {
+    title: string;
+    content: string;
+  }[];
 }
 
 interface AccordionItem {
@@ -165,7 +168,9 @@ document.addEventListener("DOMContentLoaded", () => {
   form.appendChild(input);
 
   form.appendChild(categorySelect);
-  form.addEventListener("submit", () => {
+  form.addEventListener("submit", (event) => {
+    console.log(event);
+    event.preventDefault();
     filterItems(); // Filter items when form is submitted
   });
 

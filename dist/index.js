@@ -1106,7 +1106,9 @@ document.addEventListener("DOMContentLoaded", function () {
     // Append input to form
     form.appendChild(input);
     form.appendChild(categorySelect);
-    form.addEventListener("submit", function () {
+    form.addEventListener("submit", function (event) {
+        console.log(event);
+        event.preventDefault();
         filterItems(); // Filter items when form is submitted
     });
     // Append form to the container
