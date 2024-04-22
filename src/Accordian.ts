@@ -125,12 +125,10 @@ function filterItems() {
 
     //Search the description inside the nested object named:steps;
     const desContent = item.steps
-      ?.map((element) => {
-        return element?.description;
-      })
-      .toLocaleString()
-      .toLowerCase()
-      .includes(filterValue.search.toLocaleLowerCase());
+      ?.flatMap((step) => step.description.toLowerCase())
+      .some((description) =>
+        description.includes(filterValue.search.toLowerCase())
+      );
 
     const categoryMatches =
       filterValue.category.toLowerCase() === "all categories" ||

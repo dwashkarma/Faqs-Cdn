@@ -1074,9 +1074,9 @@ function filterItems() {
             .toLowerCase()
             .includes(filterValue.search.toLowerCase());
         //Search the description inside the nested object named:steps;
-        var desContent = (_a = item.steps) === null || _a === void 0 ? void 0 : _a.map(function (element) {
-            return element === null || element === void 0 ? void 0 : element.description;
-        }).toLocaleString().toLowerCase().includes(filterValue.search.toLocaleLowerCase());
+        var desContent = (_a = item.steps) === null || _a === void 0 ? void 0 : _a.flatMap(function (step) { return step.description.toLowerCase(); }).some(function (description) {
+            return description.includes(filterValue.search.toLowerCase());
+        });
         var categoryMatches = filterValue.category.toLowerCase() === "all categories" ||
             item.category.toLowerCase() === filterValue.category.toLowerCase();
         return ((titleContainsSearch && categoryMatches) ||
