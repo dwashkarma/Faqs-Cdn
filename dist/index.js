@@ -1054,7 +1054,16 @@ var handleCategoryChange = function (event) {
     console.log(filterValue);
     filterItems();
 };
+function removeAllChildNodes(parent) {
+    while (parent.firstChild) {
+        parent.removeChild(parent.firstChild);
+    }
+}
 function filterItems() {
+    var container = document.getElementById("faqs");
+    if (container) {
+        removeAllChildNodes(container);
+    }
     var filteredData = accordionData.filter(function (item) {
         var _a;
         var titleContainsSearch = item.title
@@ -1074,6 +1083,7 @@ function filterItems() {
             (contentSearch && categoryMatches) ||
             desContent);
     });
+    console.log(filteredData);
     generateAccordionItems(filteredData);
 }
 //On DOMContentLoaded

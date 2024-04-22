@@ -101,7 +101,18 @@ const handleCategoryChange = (event: Event) => {
   filterItems();
 };
 
+function removeAllChildNodes(parent: HTMLElement) {
+  while (parent.firstChild) {
+    parent.removeChild(parent.firstChild);
+  }
+}
+
 function filterItems() {
+  const container = document.getElementById("faqs");
+  if (container) {
+    removeAllChildNodes(container);
+  }
+
   const filteredData = accordionData.filter((item) => {
     const titleContainsSearch = item.title
       .toLowerCase()
@@ -130,6 +141,8 @@ function filterItems() {
       desContent
     );
   });
+  console.log(filteredData);
+
   generateAccordionItems(filteredData);
 }
 
