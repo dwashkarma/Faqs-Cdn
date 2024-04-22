@@ -970,6 +970,7 @@
       },
     ];
 
+    var accordionData = faqsList;
     // Function to generate HTML for accordion items based on data
     function generateAccordionItems(data) {
         var accordion = document.getElementById("faqs");
@@ -1002,7 +1003,29 @@
     var handleSearchChange = function (event) {
         var target = event.target;
         filterValue = __assign(__assign({}, filterValue), { search: target.value });
+        console.log(event);
+        filterItems();
     };
+    function filterItems() {
+        var filteredData = accordionData.filter(function (item) {
+            var _a;
+            var titleContainsSearch = item.title
+                .toLowerCase()
+                .includes(filterValue.search.toLowerCase());
+            //Search the "Content" inside the Array
+            var contentSearch = item === null || item === void 0 ? void 0 : item.content.toLowerCase().includes(filterValue.search.toLowerCase());
+            //Search the description inside the nested object named:steps;
+            var desContent = (_a = item.steps) === null || _a === void 0 ? void 0 : _a.map(function (element) {
+                return element === null || element === void 0 ? void 0 : element.description;
+            }).toLocaleString().toLowerCase().includes(filterValue.search.toLocaleLowerCase());
+            var categoryMatches = filterValue.category.toLowerCase() === "all categories" ||
+                item.category.toLowerCase() === filterValue.category.toLowerCase();
+            return ((titleContainsSearch && categoryMatches) ||
+                (contentSearch && categoryMatches) ||
+                desContent);
+        });
+        generateAccordionItems(filteredData);
+    }
     //On DOMContentLoaded
     document.addEventListener("DOMContentLoaded", function () {
         //create form element

@@ -85,7 +85,40 @@ let filterValue = {
 const handleSearchChange = (event: Event) => {
   let target = event.target as HTMLInputElement;
   filterValue = { ...filterValue, search: target.value };
+  console.log(event);
+  filterItems();
 };
+function filterItems() {
+  const filteredData = accordionData.filter((item) => {
+    const titleContainsSearch = item.title
+      .toLowerCase()
+      .includes(filterValue.search.toLowerCase());
+
+    //Search the "Content" inside the Array
+    const contentSearch = item?.content
+      .toLowerCase()
+      .includes(filterValue.search.toLowerCase());
+
+    //Search the description inside the nested object named:steps;
+    const desContent = item.steps
+      ?.map((element) => {
+        return element?.description;
+      })
+      .toLocaleString()
+      .toLowerCase()
+      .includes(filterValue.search.toLocaleLowerCase());
+
+    const categoryMatches =
+      filterValue.category.toLowerCase() === "all categories" ||
+      item.category.toLowerCase() === filterValue.category.toLowerCase();
+    return (
+      (titleContainsSearch && categoryMatches) ||
+      (contentSearch && categoryMatches) ||
+      desContent
+    );
+  });
+  generateAccordionItems(filteredData);
+}
 
 //On DOMContentLoaded
 document.addEventListener("DOMContentLoaded", () => {
