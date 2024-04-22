@@ -138,7 +138,10 @@ document.addEventListener("DOMContentLoaded", () => {
   input.setAttribute("placeholder", "Search");
   input.setAttribute("aria-label", "Search");
   input.addEventListener("change", handleSearchChange);
-
+  const submitButton = document.createElement("button");
+  submitButton.classList.add("btn", "btn-primary");
+  submitButton.setAttribute("type", "submit"); // Set button type to submit
+  submitButton.textContent = "Search";
   // Create Category Select
   const categorySelect = document.createElement("select");
   categorySelect.classList.add("form-select", "form-select-lg", "mb-3");
@@ -162,9 +165,12 @@ document.addEventListener("DOMContentLoaded", () => {
   form.setAttribute("role", "search");
   // Append input to form
   form.appendChild(input);
+  form.appendChild(submitButton);
   form.appendChild(categorySelect);
   form.addEventListener("submit", function (event) {
     event.preventDefault(); // Prevent default form submission behavior
+    const formData = new FormData(form);
+    filterValue.search = formData.get("search") as string;
     filterItems(); // Filter items when form is submitted
   });
 
