@@ -137,6 +137,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Append input to form
   form.appendChild(input);
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+  });
 
   // Append form to the container
   const container = document.getElementById("searchFormContainer");

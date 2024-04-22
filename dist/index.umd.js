@@ -1041,6 +1041,9 @@
         input.addEventListener("change", handleSearchChange);
         // Append input to form
         form.appendChild(input);
+        form.addEventListener("submit", function (event) {
+            event.preventDefault();
+        });
         // Append form to the container
         var container = document.getElementById("searchFormContainer");
         if (container) {
