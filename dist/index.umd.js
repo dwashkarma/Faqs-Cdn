@@ -1051,6 +1051,12 @@
         console.log(filterValue);
         filterItems();
     };
+    var handleCategoryChange = function (event) {
+        var target = event.target;
+        filterValue = __assign(__assign({}, filterValue), { category: target.value });
+        console.log(filterValue);
+        filterItems();
+    };
     function filterItems() {
         var filteredData = accordionData.filter(function (item) {
             var _a;
@@ -1085,6 +1091,7 @@
         // Create Category Select
         var categorySelect = document.createElement("select");
         categorySelect.classList.add("form-select", "form-select-lg", "mb-3");
+        categorySelect.addEventListener("change", handleCategoryChange);
         var categoryOption = document.createElement("option");
         categoryOption.value = "All Categories";
         categoryOption.textContent = "All Categories";

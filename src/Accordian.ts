@@ -90,6 +90,13 @@ const handleSearchChange = (event: Event) => {
   console.log(filterValue);
   filterItems();
 };
+
+const handleCategoryChange = (event: Event) => {
+  let target = event.target as HTMLInputElement;
+  filterValue = { ...filterValue, category: target.value };
+  console.log(filterValue);
+  filterItems();
+};
 function filterItems() {
   const filteredData = accordionData.filter((item) => {
     const titleContainsSearch = item.title
@@ -135,6 +142,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Create Category Select
   const categorySelect = document.createElement("select");
   categorySelect.classList.add("form-select", "form-select-lg", "mb-3");
+  categorySelect.addEventListener("change", handleCategoryChange);
 
   const categoryOption = document.createElement("option");
   categoryOption.value = "All Categories";
