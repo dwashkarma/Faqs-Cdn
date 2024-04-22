@@ -142,7 +142,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Create Category Select
   const categorySelect = document.createElement("select");
-  categorySelect.classList.add("form-select", "form-select-lg", "mb-3");
+  categorySelect.classList.add("form-select", "form-select-lg");
   categorySelect.addEventListener("change", handleCategoryChange);
 
   const categoryOption = document.createElement("option");

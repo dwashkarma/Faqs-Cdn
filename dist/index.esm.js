@@ -1085,7 +1085,7 @@ document.addEventListener("DOMContentLoaded", function () {
     input.addEventListener("change", handleSearchChange);
     // Create Category Select
     var categorySelect = document.createElement("select");
-    categorySelect.classList.add("form-select", "form-select-lg", "mb-3");
+    categorySelect.classList.add("form-select", "form-select-lg");
     categorySelect.addEventListener("change", handleCategoryChange);
     var categoryOption = document.createElement("option");
     categoryOption.value = "All Categories";
