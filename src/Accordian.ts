@@ -17,9 +17,36 @@ const accordionData = faqsList;
 
 // Function to generate HTML for accordion items based on data
 function generateAccordionItems(data: AccordionItem[]) {
+
+
+const form = document.createElement("form");
+form.classList.add("d-flex");
+form.setAttribute("role", "search");
+
+// Create input element
+const input = document.createElement("input");
+input.classList.add("form-control", "me-2");
+input.setAttribute("type", "search");
+input.setAttribute("placeholder", "Search");
+input.setAttribute("aria-label", "Search");
+
+// Append input to form
+form.appendChild(input);
+
+// Append form to the container
+const container = document.getElementById("searchFormContainer");
+if (container) {
+  container.appendChild(form);
+} else {
+  console.log("There is no id named:Search");
+}
+
   const accordion = document.getElementById("faqs");
 
   if (accordion) {
+    const searchDiv = document.createElement("div");
+    searchDiv.classList.add("search-div");
+
     data.forEach((item, index) => {
       const accordionItem = document.createElement("div");
       accordionItem.classList.add("accordion");
@@ -67,21 +94,6 @@ function generateAccordionItems(data: AccordionItem[]) {
         </div>
       `);
       }
-      // accordionItem.innerHTML = `
-      // <div class="accordion-item">
-      //   <h2 class="accordion-header">
-      //     <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#${index}" aria-expanded="false" aria-controls="${index}">
-      //       <span>${item.title}</span><span>${item.category}</span>
-      //     </button>
-      //   </h2>
-      //   <div id="${index}" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
-
-      //   <div class="accordion-body">
-      //       <div>${item.content}</div>
-      //     </div>
-      //   </div>
-      //   </div>
-      // `;
 
       if (accordion) {
         accordion.appendChild(accordionItem);
