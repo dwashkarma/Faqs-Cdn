@@ -163,6 +163,10 @@ document.addEventListener("DOMContentLoaded", () => {
   // Append input to form
   form.appendChild(input);
   form.appendChild(categorySelect);
+  form.addEventListener("submit", function (event) {
+    event.preventDefault(); // Prevent default form submission behavior
+    filterItems(); // Filter items when form is submitted
+  });
 
   // Append form to the container
   const container = document.getElementById("searchBox");
