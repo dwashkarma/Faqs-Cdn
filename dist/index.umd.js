@@ -970,7 +970,51 @@
       },
     ];
 
+    const faqCategories = [
+      {
+        value: "all_categories",
+        label: "All Categories",
+      },
+      {
+        value: "demat_account",
+        label: "Demat Account",
+      },
+      {
+        value: "trading_account",
+        label: "Trading Account",
+      },
+      {
+        value: "refund_amount",
+        label: "Refund Amount",
+      },
+      {
+        value: "edis_frozen_account_details",
+        label: "Edis and Frozen Account Details",
+      },
+      {
+        value: "load_collateral",
+        label: "Load Collateral",
+      },
+      {
+        value: "shares_related_queires",
+        label: "Shares Related Queries",
+      },
+      {
+        value: "margin_trading",
+        label: "Margin Trading",
+      },
+      {
+        value: "kyc",
+        label: "KYC",
+      },
+      {
+        value: "general_queries",
+        label: "General Queries",
+      },
+    ];
+
     var accordionData = faqsList;
+    var categoryOptions = faqCategories;
     // Function to generate HTML for accordion items based on data
     function generateAccordionItems(data) {
         var accordion = document.getElementById("faqs");
@@ -1003,7 +1047,8 @@
     var handleSearchChange = function (event) {
         var target = event.target;
         filterValue = __assign(__assign({}, filterValue), { search: target.value });
-        console.log(event);
+        console.log(target.value);
+        console.log(filterValue);
         filterItems();
     };
     function filterItems() {
@@ -1013,7 +1058,9 @@
                 .toLowerCase()
                 .includes(filterValue.search.toLowerCase());
             //Search the "Content" inside the Array
-            var contentSearch = item === null || item === void 0 ? void 0 : item.content.toLowerCase().includes(filterValue.search.toLowerCase());
+            var contentSearch = item.content
+                .toLowerCase()
+                .includes(filterValue.search.toLowerCase());
             //Search the description inside the nested object named:steps;
             var desContent = (_a = item.steps) === null || _a === void 0 ? void 0 : _a.map(function (element) {
                 return element === null || element === void 0 ? void 0 : element.description;
@@ -1028,10 +1075,6 @@
     }
     //On DOMContentLoaded
     document.addEventListener("DOMContentLoaded", function () {
-        //create form element
-        var form = document.createElement("form");
-        form.classList.add("d-flex");
-        form.setAttribute("role", "search");
         // Create input element
         var input = document.createElement("input");
         input.classList.add("form-control", "me-2");
@@ -1039,13 +1082,28 @@
         input.setAttribute("placeholder", "Search");
         input.setAttribute("aria-label", "Search");
         input.addEventListener("change", handleSearchChange);
+        // Create Category Select
+        var categorySelect = document.createElement("select");
+        categorySelect.classList.add("form-select", "form-select-lg", "mb-3");
+        var categoryOption = document.createElement("option");
+        categoryOption.value = "All Categories";
+        categoryOption.textContent = "All Categories";
+        categorySelect.appendChild(categoryOption);
+        categoryOptions.map(function (items) {
+            var option = document.createElement("option");
+            option.value = items.value;
+            option.textContent = items.value;
+            categorySelect.appendChild(option);
+        });
+        //create form element
+        var form = document.createElement("form");
+        form.classList.add("d-flex", "justify-content-between");
+        form.setAttribute("role", "search");
         // Append input to form
         form.appendChild(input);
-        form.addEventListener("submit", function (event) {
-            event.preventDefault();
-        });
+        form.appendChild(categorySelect);
         // Append form to the container
-        var container = document.getElementById("searchFormContainer");
+        var container = document.getElementById("searchBox");
         if (container) {
             container.appendChild(form);
         }

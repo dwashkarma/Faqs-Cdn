@@ -1,4 +1,5 @@
 import { faqsList } from "./raw-data/faqs";
+import { faqCategories } from "./raw-data/faqs";
 
 interface Step {
   title: string;
@@ -14,7 +15,7 @@ interface AccordionItem {
 }
 
 const accordionData = faqsList;
-
+const categoryOptions = faqCategories;
 // Function to generate HTML for accordion items based on data
 function generateAccordionItems(data: AccordionItem[]) {
   const accordion = document.getElementById("faqs");
@@ -85,7 +86,8 @@ let filterValue = {
 const handleSearchChange = (event: Event) => {
   let target = event.target as HTMLInputElement;
   filterValue = { ...filterValue, search: target.value };
-  console.log(event);
+  console.log(target.value);
+  console.log(filterValue);
   filterItems();
 };
 function filterItems() {
@@ -95,7 +97,7 @@ function filterItems() {
       .includes(filterValue.search.toLowerCase());
 
     //Search the "Content" inside the Array
-    const contentSearch = item?.content
+    const contentSearch = item.content
       .toLowerCase()
       .includes(filterValue.search.toLowerCase());
 
@@ -122,11 +124,6 @@ function filterItems() {
 
 //On DOMContentLoaded
 document.addEventListener("DOMContentLoaded", () => {
-  //create form element
-  const form = document.createElement("form");
-  form.classList.add("d-flex");
-  form.setAttribute("role", "search");
-
   // Create input element
   const input = document.createElement("input");
   input.classList.add("form-control", "me-2");
@@ -135,14 +132,32 @@ document.addEventListener("DOMContentLoaded", () => {
   input.setAttribute("aria-label", "Search");
   input.addEventListener("change", handleSearchChange);
 
-  // Append input to form
-  form.appendChild(input);
-  form.addEventListener("submit", function (event) {
-    event.preventDefault();
+  // Create Category Select
+  const categorySelect = document.createElement("select");
+  categorySelect.classList.add("form-select", "form-select-lg", "mb-3");
+
+  const categoryOption = document.createElement("option");
+  categoryOption.value = "All Categories";
+  categoryOption.textContent = "All Categories";
+  categorySelect.appendChild(categoryOption);
+
+  categoryOptions.map((items) => {
+    const option = document.createElement("option");
+    option.value = items.value;
+    option.textContent = items.value;
+    categorySelect.appendChild(option);
   });
 
+  //create form element
+  const form = document.createElement("form");
+  form.classList.add("d-flex", "justify-content-between");
+  form.setAttribute("role", "search");
+  // Append input to form
+  form.appendChild(input);
+  form.appendChild(categorySelect);
+
   // Append form to the container
-  const container = document.getElementById("searchFormContainer");
+  const container = document.getElementById("searchBox");
   if (container) {
     container.appendChild(form);
   } else {
