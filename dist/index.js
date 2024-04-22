@@ -939,8 +939,29 @@ const faqsList = [
 var accordionData = faqsList;
 // Function to generate HTML for accordion items based on data
 function generateAccordionItems(data) {
+    var form = document.createElement("form");
+    form.classList.add("d-flex");
+    form.setAttribute("role", "search");
+    // Create input element
+    var input = document.createElement("input");
+    input.classList.add("form-control", "me-2");
+    input.setAttribute("type", "search");
+    input.setAttribute("placeholder", "Search");
+    input.setAttribute("aria-label", "Search");
+    // Append input to form
+    form.appendChild(input);
+    // Append form to the container
+    var container = document.getElementById("searchFormContainer");
+    if (container) {
+        container.appendChild(form);
+    }
+    else {
+        console.log("There is no id named:Search");
+    }
     var accordion = document.getElementById("faqs");
     if (accordion) {
+        var searchDiv = document.createElement("div");
+        searchDiv.classList.add("search-div");
         data.forEach(function (item, index) {
             var _a;
             var accordionItem = document.createElement("div");
@@ -954,20 +975,6 @@ function generateAccordionItems(data) {
                     ? (accordionItem.innerHTML = "\n      <div class=\"accordion-item\">\n        <h2 class=\"accordion-header\">\n          <button class=\"accordion-button collapsed d-flex flex-wrap\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#".concat(index, "\" aria-expanded=\"false\" aria-controls=\"").concat(index, "\">\n            <span>").concat(item.title, "</span> \n            <span class=\"border border-success-subtle rounded-pill mx-2 px-2 py-1 fs-6 \">").concat(item.category, "</span>\n          </button>\n        </h2>\n        <div id=\"").concat(index, "\" class=\"accordion-collapse collapse \" data-bs-parent=\"#accordionExample\">\n       \n        <div class=\"accordion-body\">\n           ").concat(steps, "\n          </div>\n        </div>\n        </div>\n      "))
                     : (accordionItem.innerHTML = "\n      <div class=\"accordion-item\">\n        <h2 class=\"accordion-header\">\n          <button class=\"accordion-button collapsed d-flex flex-wrap\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#".concat(index, "\" aria-expanded=\"false\" aria-controls=\"").concat(index, "\">\n            <span>").concat(item.title, "</span>\n            <span class=\"border border-success-subtle rounded-pill mx-2 px-2 py-1 fs-6 \">").concat(item.category, "</span>\n          </button>\n        </h2>\n        <div id=\"").concat(index, "\" class=\"accordion-collapse collapse \" data-bs-parent=\"#accordionExample\">\n       \n        <div class=\"accordion-body\">\n            <div>").concat(item.content, "</div>\n          </div>\n        </div>\n        </div>\n      "));
             }
-            // accordionItem.innerHTML = `
-            // <div class="accordion-item">
-            //   <h2 class="accordion-header">
-            //     <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#${index}" aria-expanded="false" aria-controls="${index}">
-            //       <span>${item.title}</span><span>${item.category}</span>
-            //     </button>
-            //   </h2>
-            //   <div id="${index}" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
-            //   <div class="accordion-body">
-            //       <div>${item.content}</div>
-            //     </div>
-            //   </div>
-            //   </div>
-            // `;
             if (accordion) {
                 accordion.appendChild(accordionItem);
             }
