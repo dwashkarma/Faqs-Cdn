@@ -156,7 +156,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Create Category Select
   const categorySelect = document.createElement("select");
-  categorySelect.classList.add("form-select", "form-select-lg");
+  categorySelect.classList.add("form-select", "form-select-sm");
   categorySelect.addEventListener("change", handleCategoryChange);
 
   const categoryOption = document.createElement("option");
