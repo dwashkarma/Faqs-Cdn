@@ -1045,7 +1045,6 @@ var handleSearchChange = function (event) {
     var target = event.target;
     filterValue = __assign(__assign({}, filterValue), { search: target.value });
     console.log(target.value);
-    console.log(filterValue);
     filterItems();
 };
 var handleCategoryChange = function (event) {
@@ -1094,7 +1093,10 @@ document.addEventListener("DOMContentLoaded", function () {
     input.setAttribute("type", "search");
     input.setAttribute("placeholder", "Search");
     input.setAttribute("aria-label", "Search");
-    input.addEventListener("change", handleSearchChange);
+    var inputChange = document.querySelector('input[type="search"]');
+    if (inputChange) {
+        input.addEventListener("change", handleSearchChange);
+    }
     // Create Category Select
     var categorySelect = document.createElement("select");
     categorySelect.classList.add("form-select", "form-select-sm");
@@ -1111,7 +1113,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     //create form element
     var form = document.createElement("form");
-    form.classList.add("d-flex", "justify-content-between", "mb-2");
+    form.classList.add("d-flex", "justify-content-between", "my-2");
     form.setAttribute("role", "search");
     // Append input to form
     form.appendChild(input);

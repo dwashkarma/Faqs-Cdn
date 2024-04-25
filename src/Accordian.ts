@@ -141,8 +141,6 @@ const handleSearchChange = (event: Event) => {
 
   console.log(target.value);
 
-  console.log(filterValue);
-
   filterItems();
 };
 
@@ -224,8 +222,10 @@ document.addEventListener("DOMContentLoaded", () => {
   input.setAttribute("placeholder", "Search");
 
   input.setAttribute("aria-label", "Search");
-
-  input.addEventListener("change", handleSearchChange);
+  const inputChange = document.querySelector('input[type="search"]');
+  if (inputChange) {
+    input.addEventListener("change", handleSearchChange);
+  }
 
   // Create Category Select
 
@@ -257,7 +257,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const form = document.createElement("form");
 
-  form.classList.add("d-flex", "justify-content-between","mb-2");
+  form.classList.add("d-flex", "justify-content-between", "my-2");
 
   form.setAttribute("role", "search");
 
