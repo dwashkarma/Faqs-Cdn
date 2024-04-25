@@ -1096,10 +1096,7 @@
         input.setAttribute("type", "search");
         input.setAttribute("placeholder", "Search");
         input.setAttribute("aria-label", "Search");
-        var inputChange = document.querySelector('input[type="search"]');
-        if (inputChange) {
-            input.addEventListener("change", handleSearchChange);
-        }
+        input.addEventListener("input", handleSearchChange);
         // Create Category Select
         var categorySelect = document.createElement("select");
         categorySelect.classList.add("form-select", "form-select-sm");

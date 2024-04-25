@@ -222,10 +222,8 @@ document.addEventListener("DOMContentLoaded", () => {
   input.setAttribute("placeholder", "Search");
 
   input.setAttribute("aria-label", "Search");
-  const inputChange = document.querySelector('input[type="search"]');
-  if (inputChange) {
-    input.addEventListener("change", handleSearchChange);
-  }
+
+  input.addEventListener("input", handleSearchChange);
 
   // Create Category Select
 
