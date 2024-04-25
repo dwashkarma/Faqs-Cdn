@@ -1114,7 +1114,7 @@
         });
         //create form element
         var form = document.createElement("form");
-        form.classList.add("d-flex", "justify-content-between");
+        form.classList.add("d-flex", "justify-content-between", "mb-2");
         form.setAttribute("role", "search");
         // Append input to form
         form.appendChild(input);
