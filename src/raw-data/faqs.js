@@ -1,3 +1,5 @@
+import { title } from "process";
+
 export const faqsList = [
   {
     title: "How to open a DEMAT account with Naasa Securities online?",
@@ -12,7 +14,7 @@ export const faqsList = [
       {
         title: "Step 2: ",
         description:
-          'Click on the <a href="https://kyc.naasasecurities.com.np/">Open a DEMAT account</a> button',
+          'To open a DEMAT account, either click the Open a DEMAT account button or <a href="https://kyc.naasasecurities.com.np/"> Click Here </a>',
         steps: [],
       },
       // {
@@ -180,7 +182,7 @@ export const faqsList = [
   {
     title: "How can I get a DEMAT confirmation letter?",
     content:
-      "Please contact the respective bank and provide the DEMAT confirmation letter provided by the NIC Asia bank with a stamp/signature. Stamp of the bank and the signature of a bank staff are often mandatory for acknowledgement.",
+      "Please login to mero share, go to my details, download the pdf and upload the pdf in jpg format in the Tms opening form. However, there is a separate process for demat confirmation letter for NICA bank. For NICA Bank, please go to the nearest branch, request for the demat confirmation with signature of bank staff and stamp of the bank.",
     category: "DEMAT Account",
   },
 
@@ -216,7 +218,7 @@ export const faqsList = [
       {
         title: "Option 2: ",
         description:
-          " Visit the branch office of Naasa Securities that is closest to you along with two (2) PP size photos and original Citizenship certificate.",
+          " Visit the branch office of Naasa Securities that is closest to you along with one (1) PP size photos and original Citizenship certificate.",
         steps: [],
       },
     ],
@@ -257,13 +259,13 @@ export const faqsList = [
   {
     title: "How can I change the details in TMS?",
     content:
-      "In order to change the details in TMS, you can either visit the office with the request, or send an email at <a>naasa@naasasecurities.com.np</a> with updated details along with an accurate Client ID.",
+      "In order to change the details in TMS, you can either visit the office with the request, or send an email at <a href='mailto:info@naasasecurities.com.np'> info@naasasecurities.com.np </a> with updated details along with an accurate Client ID.",
     category: "Trading Account",
   },
   {
     title: "How can I add my PAN card details to my TMS account?",
     content:
-      "Send us an email at <a href='https://naasasecurites.com.np'>naasa@naasasecurities.com.np</a> along with an image of your PAN card and your provided Client ID.",
+      "Send us an email at <a href='mailto:info@naasasecurities.com.np'>info@naasasecurities.com.np </a> along with an image of your PAN card and your provided Client ID.",
     category: "Trading Account",
   },
   {
@@ -278,13 +280,13 @@ export const faqsList = [
       {
         title: "Step 2",
         description:
-          "Go to <b>My Details</b> section and download it in PDF format.",
+          "Go to My Details section and download it in PDF format, i.e. DEMAT acknowledgement/Confirmation letter).",
         steps: [],
       },
       {
         title: "Step 3",
         description:
-          "Send us an email at <a href='https://naasasecurites.com.np'>naasa@naasasecurities.com.np</a> along with the downloaded PDF file from Mero Share account, a copy of citizenship certificate (both front and back,  your Client ID and the DEMAT confirmation letter (optional).",
+          "Send us an email at <a href='mailto:info@naasasecurities.com.np'> info@naasasecurities.com.np </a> along with DEMAT acknowledgement/confirmation letter of your both Demat account (Old and New), a copy of citizenship certificate and your Client ID.",
         steps: [],
       },
     ],
@@ -293,7 +295,7 @@ export const faqsList = [
   {
     title: "Reset link is expired. How can I get a new reset link?",
     content:
-      "Send us a request via email to resend a link to reset the password or contact us through phone to drop in your request. Reset link shall be sent as a reply to your initial email or the registered email address.",
+      "You can go to the TMS 58  page, click the client code icon drop down on top right and go to change password. If you still don't get the reset link, contact at <a href='mailto:info@naasasecurities.com.np'> info@naasasecurities.com.np </a>",
     category: "Trading Account",
   },
   {
@@ -316,9 +318,9 @@ export const faqsList = [
   },
   {
     title:
-      "I got my client id but still not received any password in my Gmail account why?",
+      "I got my client id but still not received any password in my email account why?",
     content:
-      "If the provided email id was correct, you shall receive a password reset link after NEPSE approval has been done.<br>If the provided email id was incorrect then, please mail in naasa@naasasecurities.com.np along with client id to update details.",
+      "If the provided email id was correct, you shall receive a password reset link after NEPSE approval has been done.<br>In case of incorrect email, please change the details in TMS for which you can either visit the office with the request, or send an email at <a href='mailto:info@naasasecurities.com.np'> info@naasasecurities.com.np </a> from your registered email with updated details along with an accurate Client ID.",
     category: "Trading Account",
   },
   {
@@ -371,7 +373,7 @@ export const faqsList = [
   {
     title: "Why is my DNA logged off?",
     content:
-      "DNA can be logged in from 11 am to 3 pm from Sunday to Thursday only. On other days and time, the DNA will be logged off.",
+      "DNA can be logged in from 10:30 AM to 3:00 PM on working days only. On other days and time, the DNA will be logged off.",
     category: "Trading Account",
   },
   {
@@ -414,11 +416,6 @@ export const faqsList = [
             title: "b. ",
             content:
               "Account name: Naasa Securities Company Ltd.<br>Account number: 07501010000768<br>Bank: Global IME Bank Ltd.<br>Branch: Kamaladi, Kathmandu",
-          },
-          {
-            title: "c. ",
-            content:
-              "Account name: Naasa Securities Company Ltd.<br>Account number: 001010010002539<br>Bank: Sanima Bank Ltd. <br>Branch: Naxal, Kathmandu",
           },
         ],
       },
@@ -490,7 +487,7 @@ export const faqsList = [
     title:
       "Why is my tax deductible on the merger company although it's tax free?",
     content:
-      "After selling a merger company’s share, from the meroshare account, place a tick mark on the option “Merger and Acquisition” under the My Purchase Sources segment. In case you don’t find the option, you should immediately contact the CNS department within T+1 days of selling the share. Or, please send us an email regarding the same issue on<a> edis@naasasecurities.com.np.</a>",
+      "After selling a merger company’s share, from the meroshare account, place a tick mark on the option “Merger and Acquisition” under the My Purchase Sources segment. In case you don’t find the option, you should immediately contact the CNS department within T+1 days of selling the share. Or, please send us an email regarding the same issue on edis@naasasecurities.com.np.",
     category: "Trading Account",
   },
   {
@@ -517,7 +514,7 @@ export const faqsList = [
   {
     title: "How can I get my payment refund?",
     content:
-      "From our website <a>www.naasasecurities.com.np</a>, login to your user then you can ask for Refund. Or you can send an email at <a>refund@naasasecurities.com.np</a> regarding your Refund issues including your Client id and registered phone number.<br>Note:- You cannot ask for a refund in TMS.",
+      "From our website <a>www.naasasecurities.com.np</a>, login to your user then you can ask for Refund. Or you can send an email at <a href='mailto:refund@naasasecurities.com.np'> refund@naasasecurities.com.np </a> regarding your Refund issues including your Client id and registered phone number.<br>Note:- You cannot ask for a refund in TMS.",
     category: "Refund Amount",
   },
   {
@@ -557,7 +554,7 @@ export const faqsList = [
     title:
       "1 week ago I sold my shares / I have already asked for a refund in the website and email but I haven’t got my payment yet.",
     content:
-      "Payment can be delayed due to mismatched bank details or delay in sales settlement due to book closure of companies. We urge you to send us an email in our refund id: <a>refund@naasasecurities.com.np</a>.",
+      "Payment can be delayed due to mismatched bank details or delay in sales settlement due to book closure of companies. We urge you to send us an email in our refund id: refund@naasasecurities.com.np.",
     category: "Refund Amount",
   },
   {
@@ -600,14 +597,14 @@ export const faqsList = [
   {
     title: "I have forgotten to do EDIS. What can I do now?",
     content:
-      "After having paid the fine amount, you should send an email at <a>refund@naasasecurities.com.np</a> with the proof of payment voucher mentioning to release the closeout stock share.",
+      "You can also do the share transfer by physical DIS if you are unable to do EDIS. Contact naasa at <a href='mailto:edis@naasasecurities.com.np'>  edis@naasasecurities.com.np </a> if you forgot to do the EDIS.",
     category: "EDIS and Frozen Account Details",
   },
   {
     title:
       "I have renewed my DEMAT account already. But my account is still frozen, why?",
     content:
-      "Send an email to <a>prakriti@naasasecurities.com.np</a> with the copy of payment receipt along with Naasa DEMAT Account, BOID and Bank’s Demat Account mentioning the concern. Also, please contact the respective bank through which the DEMAT account was created.",
+      "Send an email to <a href='mailto:prakriti@naasasecurities.com.np'> prakriti@naasasecurities.com.np </a> with the copy of payment receipt along with Naasa DEMAT Account, BOID and Bank’s Demat Account mentioning the concern. Also, please contact the respective bank through which the DEMAT account was created.",
     category: "EDIS and Frozen Account Details",
   },
   {
@@ -619,7 +616,7 @@ export const faqsList = [
   {
     title: "I have already paid the fine. Why are my shares not released?",
     content:
-      "After having paid the fine amount, you should send an email at <a>refund@naasasecurities.com.np</a> with the proof of payment voucher mentioning to release the closeout stock share.",
+      "After having paid the fine amount, you should send an email at <a href='mailto:refund@naasasecurities.com.np'> refund@naasasecurities.com.np </a> with the proof of payment voucher mentioning to release the closeout stock share.",
     category: "EDIS and Frozen Account Details",
   },
   {
@@ -669,7 +666,7 @@ export const faqsList = [
   {
     title: "Why is my loaded collateral not shown in the TMS account?",
     content:
-      "If you have loaded the amount from TMS, then head to the Client Fund Transfer History option and refresh the process, which can automatically load the collateral that you loaded earlier. <br>If it shows in the statement and not in the collateral section then, please check it during next market hour, the amount shall be updated.<br>You could also send an email at <a>naasa@naasasecurities.com.np</a> with a copy of the receipt along with your Client ID for the concerned department to check it for you. ",
+      "If you have loaded the amount from TMS, then head to the Client Fund Transfer History option and refresh the process, which can automatically load the collateral that you loaded earlier. <br>If it shows in the statement and not in the collateral section then, please check it during next market hour, the amount shall be updated.<br>You could also send an email at <a href='mailto:info@naasasecurities.com.np'> info@naasasecurities.com.np </a> with a copy of the receipt along with your Client ID for the concerned department to check it for you. ",
     category: "Load Collateral",
   },
   {
@@ -688,7 +685,7 @@ export const faqsList = [
     title:
       "I haven’t got my shares yet. How long will it take for the amount to be debited? (Debit amount)",
     content:
-      "shares will automatically be transferred in T+2 days if ledger balance is clear. Also, sometimes due to book closure, it may get delayed. So, please send us an email at <a>share.ayena@naasasecurities.com.np.</a>",
+      "shares will automatically be transferred in T+2 days if ledger balance is clear. Also, sometimes due to book closure, it may get delayed. So, please send us an email at share.ayena@naasasecurities.com.np.",
     category: "Shares Related Queries",
   },
   {
@@ -722,7 +719,7 @@ export const faqsList = [
     title: "How can I open a Margin Trading account?",
     content:
       "Please visit any of the Naasa securities branches that are nearest to you and fill up an application for Margin Trading activities. You will be able to start trading on it after you have successfully completed the formalities.",
-    category: "Margin Trading Related Questions:",
+    category: "Margin Trading",
   },
   {
     title:
@@ -762,18 +759,18 @@ export const faqsList = [
         steps: [],
       },
     ],
-    category: "Margin Trading Related Questions:",
+    category: "Margin Trading",
   },
   {
     title: "What is the initial deposit amount for Margin Trading?",
     content:
       "The initial deposit amount for Margin Trading is required to be at least Rs. 4 lakhs.",
-    category: "Margin Trading Related Questions:",
+    category: "Margin Trading",
   },
   {
     title: "How can I update KYC?",
     content:
-      "Please go to our website <a>https://kyc.naasasecurities.com.np</a> and update your KYC online. For Payment: After updating, we will do further processing for payment in the bank.",
+      "Please go to our website <a href='https://kyc.naasasecurities.com.np/'>https://kyc.naasasecurities.com.np</a> and update your KYC online. For Payment: After updating, we will do further processing for payment in the bank.",
     category: "KYC (Know Your Customers)",
   },
   {
@@ -823,7 +820,7 @@ export const faqsList = [
       {
         title: "",
         description:
-          "In order to get detailed information on the reason for your form’s rejection, please check the status of your account opening request on <a>https://kyc.naasasecurities.com.np/</a> , there you will be provided with reason(s) of rejection. Based on which, you can re-submit the form with correct information and documents.",
+          "In order to get detailed information on the reason for your form’s rejection, please check the status of your account opening request on <a href='https://kyc.naasasecurities.com.np/'> https://kyc.naasasecurities.com.np/</a> , there you will be provided with reason(s) of rejection. Based on which, you can re-submit the form with correct information and documents.",
         steps: [],
       },
     ],
@@ -884,7 +881,7 @@ export const faqsList = [
     title:
       "Can I update my own bank details in my mother / father’s TMS account?",
     content:
-      "Yes, you can do so, but the bank account details should be of the TMS account holder.",
+      "No, you cannot add your bank details in someone else’s TMS account. Bank details should be of TMS account holder.",
     category: "KYC (Know Your Customers)",
   },
   {
@@ -903,7 +900,7 @@ export const faqsList = [
   {
     title: "How can I contact you?",
     content:
-      "Our official contact number is 01-5970084. Email: <a>info@naasasecurities.com.np</a> for general information and queries. The office operates from 10 AM to 6 PM.",
+      "Our official contact number is 01-5970084. Email: <a href='mailto:info@naasasecurities.com.np'> info@naasasecurities.com.np</a> for general information and queries. The office operates from 10 AM to 6 PM.",
     category: "General Queries",
   },
   {
@@ -916,14 +913,14 @@ export const faqsList = [
     title:
       "Please provide contact number and email id for Naasa’s Janakpur branch.",
     content:
-      "Following are the contact details for our branch at Janakpur.<br>Contact no is : 041590078 / 041590079<br>Email ID: naasasecuritiesj58@gmail.com",
+      "Following are the contact details for our branch at Janakpur.<br>Contact no is : 041590078 / 041590079<br>Email ID: janakpur@naasasecurities.com.np <br> Address: Naasa Securities (Janakpur) - Mills Area Chowk, Way To Sita Chowk, Janakpur, 45600 ",
     category: "General Queries",
   },
   {
     title:
       "Please provide contact number and email id for Naasa’s Birgunj branch.",
     content:
-      "Following are the contact details for our branch at Birgunj.<br>Contact no is : 051591341 / 9829057593 <br>Email ID: naasasecuritiesb58@gmail.com",
+      "Following are the contact details for our branch at Birgunj.<br>Contact no is : 051591341 / 9829057593 <br>Email ID: birgunj@naasasecurities.com.np <br> Address: Naasa Securities (Birgunj) - Aadarsh Nagar Rd (Next to Nepal Investment Bank), Birgunj, 44300 ",
     category: "General Queries",
   },
   {
@@ -960,16 +957,16 @@ export const faqCategories = [
     label: "Load Collateral",
   },
   {
-    value: "shares_related_queires",
+    value: "shares_related_queries",
     label: "Shares Related Queries",
   },
   {
-    value: "margin_trading",
+    value: "Margin Trading",
     label: "Margin Trading",
   },
   {
     value: "kyc",
-    label: "KYC",
+    label: "KYC (Know Your Customers)",
   },
   {
     value: "general_queries",
