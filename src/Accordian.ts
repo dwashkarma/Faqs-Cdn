@@ -1,6 +1,4 @@
-import { faqsList } from "./raw-data/faqs";
-
-import { faqCategories } from "./raw-data/faqs";
+import { faqsList, faqCategories } from "./raw-data/faqs";
 
 interface Step {
   title: string;

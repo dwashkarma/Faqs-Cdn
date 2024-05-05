@@ -1,5 +1,3 @@
-import 'process';
-
 /******************************************************************************
 Copyright (c) Microsoft Corporation.
 

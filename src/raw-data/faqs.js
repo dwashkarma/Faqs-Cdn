@@ -1,5 +1,3 @@
-import { title } from "process";
-
 export const faqsList = [
   {
     title: "How to open a DEMAT account with Naasa Securities online?",
