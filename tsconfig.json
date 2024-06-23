@@ -12,8 +12,9 @@
     "outDir": "dist", // Output directory for compiled JavaScript files
     "declaration": true,
     "declarationDir": "dist/types",
+    "types": ["@types/wft-signature"],
     "rootDir": "src", // Root directory where TypeScript files reside
-    "module": "esnext" // Adjust module type based on your project setup (e.g., commonjs)
+    "module": "esnext", // Adjust module type based on your project setup (e.g., commonjs)
   },
   "include": ["src/**/*.ts", "src/**/*.tsx"] // Include TypeScript files for compilation
 }

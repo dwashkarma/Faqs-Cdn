@@ -958,6 +958,70 @@ const faqsList = [
       "Yes, you have to provide a proper source of funds either bank loan, share loan, personal loan, business, remittances or others from where you get sources for transaction amount above Rs. 10 lakhs.",
     category: "General Queries",
   },
+  {
+    title: "How are Ncell and Naasa Securities related?",
+    content:
+      "Naasa is a Stock Brokerage company working in collaboration with Ncell by creating their presence in the Ncell App and catering to the customers that login to Naasa Securities’ Services and Facilities via Ncell App.<br /> Naasa Securities is also providing special discount of upto 55% on New DEMAT Account Registration and Renewal of Existing DEMAT Accounts via Ncell App.",
+    category: "Naasa X Ncell",
+  },
+  {
+    title: "Are Ncell users getting special discounts? ",
+    content:
+      "Yes, Ncell users that access the services and facilities provided by Naasa Securities via Ncell App are eligible to Flat 55% discount on every New DEMAT Account Registration and Renewal of existing DEMAT Accounts.",
+    category: "Naasa X Ncell",
+  },
+  {
+    title: "Is the discount applicable for NTC users as well? ",
+    content:
+      "No. The discount is exclusively applicable to Ncell APP users only.",
+    category: "Naasa X Ncell",
+  },
+  {
+    title:
+      "Is the discount applicable for Ncell users not using the Ncell App?",
+    content:
+      "No. The discount is exclusively applicable to Ncell APP users only.",
+    category: "Naasa X Ncell",
+  },
+  {
+    title: "Why do I need to have Ncell App?",
+    content:
+      "Ncell App is required to be eligible to Flat 55% discount on every New DEMAT Account Registration and Renewal of existing DEMAT Accounts.",
+    category: "Naasa X Ncell",
+  },
+  {
+    title:
+      "What benefits do I get from creating an account with Naasa Securities via the Ncell App?",
+    content:
+      "We provide a special offer for Ncell App users of 55% discount on New DEMAT Account Registration and Renewal of Existing DEMAT and Mero Share Account.",
+    category: "Naasa X Ncell",
+  },
+  {
+    title:
+      "What should I do if I encounter any technical issues while using the Naasa Securities’ Services and Facilities available in Ncell App?",
+    content:
+      "If you encounter any technical issues while using the services and facilities of Naasa Securities in Ncell App, you may contact us from the “Contact Us” section under Naasa Securities from Ncell App.",
+    category: "Naasa X Ncell",
+  },
+  {
+    title:
+      "Is there a fee for using the Naasa Securities Services through the Ncell App ?",
+    content:
+      "Fees are only applicable during Registration and Renewal of DEMAT Accounts. However, we provide a special offer for Ncell App users of Flat 55% Discount on every new DEMAT Account Registration and Renewal of existing DEMAT and Mero Share Account.",
+    category: "Naasa X Ncell",
+  },
+  {
+    title: "Is the offer valid through the Ncell App only?",
+    content: " Yes, the offer is only valid from the Ncell App.",
+    category: "Naasa X Ncell",
+  },
+  {
+    title:
+      "Is the offer of 55% Discount on Renewal of DEMAT applicable for all DEMAT accounts?",
+    content:
+      " The discount offer is only applicable for DEMAT accounts registered under Naasa Securities.",
+    category: "Naasa X Ncell",
+  },
 ];
 
 const faqCategories = [
@@ -1000,6 +1064,10 @@ const faqCategories = [
   {
     value: "general_queries",
     label: "General Queries",
+  },
+  {
+    value: "Naasa X Ncell",
+    label: "Naasa X Ncell",
   },
 ];
 
