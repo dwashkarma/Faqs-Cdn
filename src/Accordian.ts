@@ -184,11 +184,10 @@ function filterItems() {
 
     const desContent = item.steps
 
-      ?.flatMap((step) => step.description.toLowerCase())
-
-      .some((description) =>
-        description.includes(filterValue.search.toLowerCase())
-      );
+      ?.map((step) => step?.description)
+      .toString()
+      .toLowerCase()
+      .includes(filterValue.search.toLowerCase());
 
     const categoryMatches =
       filterValue.category.toLowerCase() === "all categories" ||
