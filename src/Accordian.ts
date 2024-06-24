@@ -194,9 +194,7 @@ function filterItems() {
       item.category.toLowerCase() === filterValue.category.toLowerCase();
 
     return (
-      (titleContainsSearch && categoryMatches) ||
-      (contentSearch && categoryMatches) ||
-      desContent
+      (titleContainsSearch || contentSearch || desContent) && categoryMatches
     );
   });
 
