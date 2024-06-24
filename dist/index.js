@@ -1139,9 +1139,7 @@ function filterItems() {
         var desContent = (_a = item.steps) === null || _a === void 0 ? void 0 : _a.map(function (step) { return step === null || step === void 0 ? void 0 : step.description; }).toString().toLowerCase().includes(filterValue.search.toLowerCase());
         var categoryMatches = filterValue.category.toLowerCase() === "all categories" ||
             item.category.toLowerCase() === filterValue.category.toLowerCase();
-        return ((titleContainsSearch && categoryMatches) ||
-            (contentSearch && categoryMatches) ||
-            desContent);
+        return ((titleContainsSearch || contentSearch || desContent) && categoryMatches);
     });
     console.log(filteredData);
     generateAccordionItems(filteredData);
